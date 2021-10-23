@@ -3,114 +3,93 @@
  xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
 <!--
  !  VOTable written by STIL version 4.0-2 (uk.ac.starlink.votable.VOTableWriter)
- !  at 2021-10-23T20:44:33
+ !  at 2021-10-23T21:53:16
  !-->
 <RESOURCE>
-<TABLE name="result_S1635021709831" nrows="23">
-<PARAM arraysize="2" datatype="char" name="QUERY_STATUS" value="OK"/>
-<PARAM arraysize="3" datatype="char" name="PROVIDER" value="CDS">
-<DESCRIPTION>TAPVizieR</DESCRIPTION>
-</PARAM>
-<PARAM arraysize="231" datatype="char" name="QUERY" value="SELECT    TOP 100    db.RA_ICRS as ra,     db.DE_ICRS as de     FROM &quot;V/147/sdss12&quot; AS db    JOIN TAP_UPLOAD.t7 AS tc    ON 1=CONTAINS(POINT('ICRS', db.RA_ICRS, db.DE_ICRS),                  CIRCLE('ICRS', tc.ra, tc.dec, 3./3600.))"/>
+<TABLE name="Objects" nrows="19">
 <FIELD datatype="double" name="ra" ucd="pos.eq.ra;meta.main" unit="deg">
 <DESCRIPTION>Right Ascension of the object (ICRS) (ra)</DESCRIPTION>
 </FIELD>
-<FIELD datatype="double" name="de" ucd="pos.eq.dec;meta.main" unit="deg">
+<FIELD datatype="double" name="dec" ucd="pos.eq.dec;meta.main" unit="deg">
 <DESCRIPTION>Declination of the object (ICRS) (dec)</DESCRIPTION>
 </FIELD>
 <DATA>
 <TABLEDATA>
   <TR>
-    <TD>238.047316</TD>
-    <TD>46.991037</TD>
-  </TR>
-  <TR>
-    <TD>238.047391</TD>
-    <TD>46.99102</TD>
-  </TR>
-  <TR>
-    <TD>238.053449</TD>
-    <TD>47.182997</TD>
-  </TR>
-  <TR>
-    <TD>238.101688</TD>
-    <TD>47.690289</TD>
-  </TR>
-  <TR>
-    <TD>238.101746</TD>
-    <TD>47.690265</TD>
-  </TR>
-  <TR>
-    <TD>238.143851</TD>
-    <TD>46.336633</TD>
-  </TR>
-  <TR>
-    <TD>238.144624</TD>
-    <TD>46.337081</TD>
-  </TR>
-  <TR>
-    <TD>238.337624</TD>
-    <TD>47.971404</TD>
-  </TR>
-  <TR>
-    <TD>238.620346</TD>
-    <TD>45.891742</TD>
-  </TR>
-  <TR>
-    <TD>238.66561</TD>
-    <TD>45.856678</TD>
-  </TR>
-  <TR>
-    <TD>238.665627</TD>
-    <TD>45.856715</TD>
-  </TR>
-  <TR>
-    <TD>238.828349</TD>
-    <TD>47.499416</TD>
-  </TR>
-  <TR>
-    <TD>238.930253</TD>
-    <TD>47.867267</TD>
-  </TR>
-  <TR>
-    <TD>239.317433</TD>
-    <TD>45.848697</TD>
-  </TR>
-  <TR>
-    <TD>239.568821</TD>
-    <TD>47.879089</TD>
-  </TR>
-  <TR>
-    <TD>239.584964</TD>
-    <TD>47.173791</TD>
-  </TR>
-  <TR>
-    <TD>239.631715</TD>
-    <TD>47.145315</TD>
-  </TR>
-  <TR>
-    <TD>239.69772</TD>
-    <TD>48.30699</TD>
-  </TR>
-  <TR>
-    <TD>239.734766</TD>
-    <TD>46.996671</TD>
-  </TR>
-  <TR>
-    <TD>239.910232</TD>
-    <TD>48.486443</TD>
-  </TR>
-  <TR>
-    <TD>240.11674</TD>
-    <TD>47.262167</TD>
+    <TD>240.621726</TD>
+    <TD>48.100121</TD>
   </TR>
   <TR>
     <TD>240.305004</TD>
     <TD>48.311864</TD>
   </TR>
   <TR>
-    <TD>240.621726</TD>
-    <TD>48.100121</TD>
+    <TD>240.11674</TD>
+    <TD>47.262167</TD>
+  </TR>
+  <TR>
+    <TD>239.910232</TD>
+    <TD>48.486443</TD>
+  </TR>
+  <TR>
+    <TD>239.734766</TD>
+    <TD>46.996671</TD>
+  </TR>
+  <TR>
+    <TD>239.69772</TD>
+    <TD>48.30699</TD>
+  </TR>
+  <TR>
+    <TD>239.631715</TD>
+    <TD>47.145315</TD>
+  </TR>
+  <TR>
+    <TD>239.584964</TD>
+    <TD>47.173791</TD>
+  </TR>
+  <TR>
+    <TD>239.568821</TD>
+    <TD>47.879089</TD>
+  </TR>
+  <TR>
+    <TD>239.317433</TD>
+    <TD>45.848697</TD>
+  </TR>
+  <TR>
+    <TD>238.930253</TD>
+    <TD>47.867267</TD>
+  </TR>
+  <TR>
+    <TD>238.828349</TD>
+    <TD>47.499416</TD>
+  </TR>
+  <TR>
+    <TD>238.665627</TD>
+    <TD>45.856715</TD>
+  </TR>
+  <TR>
+    <TD>238.620346</TD>
+    <TD>45.891742</TD>
+  </TR>
+  <TR>
+    <TD>238.337624</TD>
+    <TD>47.971404</TD>
+  </TR>
+  <TR>
+    <TD>238.143851</TD>
+    <TD>46.336633</TD>
+  </TR>
+  <TR>
+    <TD>238.101688</TD>
+    <TD>47.690289</TD>
+  </TR>
+  <TR>
+    <TD>238.053449</TD>
+    <TD>47.182997</TD>
+  </TR>
+  <TR>
+    <TD>238.047391</TD>
+    <TD>46.99102</TD>
   </TR>
 </TABLEDATA>
 </DATA>
