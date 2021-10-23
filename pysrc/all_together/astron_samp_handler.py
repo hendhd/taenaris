@@ -46,7 +46,7 @@ def magic_coords(params):
 @pyvo.samp.contextlib.contextmanager
 def SAMP_conn ():
 
-    client_name="PSH"
+    client_name="PyVO:Astroncutout"
     description = """A simple Python SAMP handler based on PyVO"""
 
 
@@ -75,6 +75,11 @@ def ask_continuence():
     
 
 def main():
+
+    # Keep the output of this example "sane".
+    if not sys.warnoptions:
+        warnings.simplefilter("ignore")
+
     stop_script=False
 
     # Due to name spaces, binding limits and to avoid using global

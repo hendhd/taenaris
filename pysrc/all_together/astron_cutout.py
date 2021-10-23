@@ -25,13 +25,6 @@ import sys
 from astropy import units as u
 from astropy.table import Table
 from astropy.io import votable
-
-
-# Keep the output of this example "sane".
-
-if not sys.warnoptions:
-    warnings.simplefilter("ignore")
-
         
 
 def get_single_radiosrc(ra,dec):
@@ -112,6 +105,10 @@ def recipe(ra,dec):
 
 
 def main():
+    # Keep the output of this example "sane".
+    if not sys.warnoptions:
+        warnings.simplefilter("ignore")
+
     receipe (240.484, 46.768)
 
 

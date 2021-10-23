@@ -124,6 +124,9 @@ def plot(sed):
 
 
 def main():
+    # Keep the output of this example "sane".
+    if not sys.warnoptions:
+        warnings.simplefilter("ignore")
     pass
 
     

@@ -73,6 +73,11 @@ def SAMP_conn ():
         client.disconnect()
 
 def main():
+    # Keep the output of this example "sane".
+    if not sys.warnoptions:
+        warnings.simplefilter("ignore")
+
+
     tables={}
     sedplt=SedPlot()
 
