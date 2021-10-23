@@ -35,14 +35,14 @@ def magic_table_row(params, tables):
     votable=tables[tab_id]
 
     # convert the votable to an astropy table to select the right row
-    table=votable.to_table()
+    ap_table=votable.to_table()
     
     # Select the row from row index
-    row=table[row_ind]
+    ap_row=ap_table[row_ind]
     
     # Sent the VOtable and the row to get the photometry. The votable is
     # necessary because of the included metadata, espcially the ucds. 
-    phot=sed.make_sed(votable,row)
+    phot=sed.make_sed(votable,ap_row)
     return (phot)
     
 
@@ -120,6 +120,7 @@ def main():
         while True:
             if sedplt.new_data==True:
                 sedplt.update_plot()
+
 
 if __name__=="__main__":
   main()

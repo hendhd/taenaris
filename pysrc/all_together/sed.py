@@ -21,22 +21,27 @@ from matplotlib import pyplot as plt
 
 
 
-def make_sed(table, row):
+def make_sed(votable, ap_row):
     phots=[]
     
     ucd_to_wl_old = {
-  "phot.mag;em.opt.u": 3.5e-7,
-  "phot.mag;em.opt.b": 4.5e-7,
-  "phot.mag;em.opt.r": 6.75e-7,
-  "phot.mag;em.opt.i": 8.75e-7,
-  "phot.mag;em.ir.j": 1.25e-6,
-  "phot.mag;em.ir.h": 1.75e-6,
-  "phot.mag;em.ir.k": 2.2e-6,
-  "phot.mag;em.ir.3-4um": 3.5e-6,
-  "phot.mag;em.ir.4-8um": 6e-6,
-  "phot.mag;em.ir.8-15um": 11.5e-6,
-  "phot.mag;em.ir.15-30um": 22.5e-6,
+    # SDS colors
+    "phot.mag;em.opt.u": 3.5e-7,
+    "phot.mag;em.opt.b": 4.5e-7,
+    "phot.mag;em.opt.r": 6.75e-7,
+    "phot.mag;em.opt.i": 8.75e-7,
+    # 2MASS 
+    "phot.mag;em.ir.j": 1.25e-6,
+    "phot.mag;em.ir.h": 1.75e-6,
+    "phot.mag;em.ir.k": 2.2e-6,
+    # WISE
+    "phot.mag;em.ir.3-4um": 3.5e-6,
+    "phot.mag;em.ir.4-8um": 6e-6,
+    "phot.mag;em.ir.8-15um": 11.5e-6,
+    "phot.mag;em.ir.15-30um": 22.5e-6,
 }
+
+    # Mapping UCD to wavelength
 
     ucd_to_wl = {
   "phot.mag;em.opt.u": 3.5e-7,
@@ -47,19 +52,21 @@ def make_sed(table, row):
 
     for ucd in ucd_to_wl: 
 
-        colname=get_colname_from_ucd(table.fields,ucd)[0]
+        colname=get_colname_from_ucd(votable.fields,ucd)[0]
 
-        mag=row[colname]
+        mag=ap_row[colname]
 
         phots.append((ucd_to_wl[ucd], mag))
+        
     return phots
 
 
 def get_colname_from_ucd(fields, ucdpattern):
     """
     Searches through the fields of an astropy votable object and returns
-    the first match
+    the list of matche
     """
+
     matches=[]
 
     for field in fields:

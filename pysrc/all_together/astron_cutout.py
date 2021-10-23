@@ -47,7 +47,8 @@ def get_single_radiosrc(ra,dec):
         FROM lolss.source_catalog AS lolss
         WHERE DISTANCE (
                 POINT ('', lolss.ra, lolss.dec),
-                POINT ('', {pos_ra}, {pos_dec})) < 100./3600. 
+                POINT ('', {pos_ra}, {pos_dec})
+                       ) < 100./3600.
           """.format(pos_ra=ra, pos_dec=dec)
 
     # Run Search ASTRON table to obtain mosaic data
