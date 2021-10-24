@@ -3,6 +3,7 @@
 import os
 import sys
 import pyvo
+import warnings
 
 
 from astropy import coordinates
@@ -91,6 +92,8 @@ def main():
         conn.reply(msg_id, 
                    {"samp.status": "samp.ok", 
                     "samp.result": {} })
+        print("receive_call_table")
+        print(params)
         table_id, table = magic_table(params)
         tables[table_id]=table
 
@@ -102,6 +105,8 @@ def main():
         conn.reply(msg_id, 
                    {"samp.status": "samp.ok", 
                     "samp.result": {} })
+        print("receive_highlight_row")
+        print(params)
         phot=magic_table_row(params, tables)
         sedplt.get_new_data(phot)
         return "OK"
