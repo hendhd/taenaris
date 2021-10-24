@@ -15,23 +15,8 @@ import sys
 
 from astropy.io import votable
 
+import astron_smart_cutout as astron
 
-def magic_table(params):
-    
-    # Read the table from local URL
-    table=votable.parse_single_table(params['url'])
-
-    # Let's see what we get
-    print (params)
-
-    # Read the table from local URL
-    table=votable.parse_single_table(params['url'])
-
-    # Print the table
-    print (table)
-
-    # This could be some elaborated Python code here!
-    print("\nYour Python table magic here")
 
 
 def magic_coords(params):
@@ -39,8 +24,10 @@ def magic_coords(params):
     # coordinates received via SAMP. 
 
     ra,dec = params['ra'], params['dec']
-    print (ra, dec)
+    
     print ("\nYour Python Coord magic here")
+    print (ra, dec)
+    result=astron.recipe(ra,dec)
 
 
 
@@ -51,10 +38,10 @@ def magic_coords(params):
 @pyvo.samp.contextlib.contextmanager
 def SAMP_conn ():
 
-    client_name="PyVO: Simple SAMP"
+    client_name="PyVO: Astron Cutout"
     description = """
         A very simple Python SAMP handler based on PyVO
-        Right now, it only accepts to handle tables."""
+        """
 
 
     # Make the client object
@@ -89,23 +76,6 @@ def main():
     # variables, we have to define the receiver function within the main
     # loop to access the client. 
     
-    def receive_call_table(
-            private_key, 
-            sender_id, 
-            msg_id, 
-            mtype, 
-            params, 
-            extra):
-
-        conn.reply(msg_id, 
-                   {"samp.status": "samp.ok", 
-                    "samp.result": {} })
-        # Define the function that actually contains our magic. It's
-        # recommended to define it outside the main loop to keep it
-        # tidy. 
-        magic_table(params)
-        return "OK"
-
     def receive_call_coord(
         # This function will be part of an exercise.
             private_key, 
@@ -131,9 +101,6 @@ def main():
      
         # Bind the function receive_call() to a SAMP mtype. 
         # This function will be executed and can contain python magic. 
-        conn.bind_receive_call (
-            "table.load.votable",
-            receive_call_table)
             
         conn.bind_receive_call (
             "coord.pointAt.sky",
