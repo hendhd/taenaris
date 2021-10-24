@@ -38,6 +38,7 @@ def get_single_radiosrc(ra,dec):
     # length of the major axis, to define the size of the cutout.
     # Looking into the errors in the positions, we give a bit of a
     # tolerance to the selection.
+
     query= """
         SELECT 
         lolss.source, lolss.ra, lolss.dec, lolss.maj_axis 
@@ -71,6 +72,9 @@ def accessible_binary(bytes, suffix=".fits"):
         finally:
                 os.unlink(f_name)
 
+
+# To make the process callable from external scripts, we define a new
+# function which will also be called in the main loop. 
 
 def recipe(ra,dec):
 
@@ -113,7 +117,8 @@ def main():
     if not sys.warnoptions:
         warnings.simplefilter("ignore")
 
-    receipe (240.484, 46.768)
+    # If run standalone, run the whole process for this position.
+    recipe (240.484, 46.768)
 
 
 if __name__=="__main__":

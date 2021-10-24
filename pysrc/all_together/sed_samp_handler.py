@@ -36,6 +36,7 @@ def magic_table_row(params, tables):
     votable=tables[tab_id]
 
     # convert the votable to an astropy table to select the right row
+    # which we need to make the photometry.
     ap_table=votable.to_table()
     
     # Select the row from row index

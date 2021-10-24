@@ -15,19 +15,26 @@ import sys
 
 from astropy.io import votable
 
-import astron_cutout as astron
 
-
-
-def magic_coords(params):
-    # Exercise: Add some python Magic so this function will print (ra,dec) for
-    # coordinates received via SAMP. 
-
-    ra,dec = params['ra'], params['dec']
+def magic_table(params):
     
-    print ("\nYour Python Coord magic here")
-    print (ra, dec)
-    result=astron.recipe(ra,dec)
+    # Let's see what we get
+    print (params)
+
+    # Read the table from local URL
+    table=votable.parse_single_table(params['url'])
+
+    return params['table_id'], table
+
+
+def magic_table_row(params):
+    # Get the table id. It's possible to handle more than one table at
+    # once, so keeping track of which row of which table is received is
+    # a crucial task. 
+    print (params) 
+
+    return "OK"
+
 
 
 
@@ -38,10 +45,10 @@ def magic_coords(params):
 @pyvo.samp.contextlib.contextmanager
 def SAMP_conn ():
 
-    client_name="PyVO: Astron Cutout"
+    client_name="PyVO: Row Handler"
     description = """
         A very simple Python SAMP handler based on PyVO
-        """
+        Right now, it only accepts to handle tables."""
 
 
     # Make the client object
@@ -70,13 +77,32 @@ def main():
     # We will later ask for input, so we need to define the variable
     # before. 
     stop_script=""
+    tables={}
 
 
     # Due to name spaces, binding limits and to avoid using global
     # variables, we have to define the receiver function within the main
     # loop to access the client. 
     
-    def receive_call_coord(
+    def receive_call_table(
+            private_key, 
+            sender_id, 
+            msg_id, 
+            mtype, 
+            params, 
+            extra):
+
+        conn.reply(msg_id, 
+                   {"samp.status": "samp.ok", 
+                    "samp.result": {} })
+        # Define the function that actually contains our magic. It's
+        # recommended to define it outside the main loop to keep it
+        # tidy. 
+        magic_table(params)
+        tables
+        return "OK"
+
+    def receive_highlight_row(
         # This function will be part of an exercise.
             private_key, 
             sender_id, 
@@ -89,10 +115,9 @@ def main():
                    {"samp.status": "samp.ok", 
                     "samp.result": {} })
                     
-        print("receive_call_coord")
-        print(params)
+        print("receive_highlight_row")
 
-        magic_coords(params)
+        magic_table_row(params)
 
         return "OK"
 
@@ -101,10 +126,14 @@ def main():
      
         # Bind the function receive_call() to a SAMP mtype. 
         # This function will be executed and can contain python magic. 
-            
         conn.bind_receive_call (
-            "coord.pointAt.sky",
-            receive_call_coord)
+            "table.load.votable",
+            receive_call_table)
+            
+        conn.bind_receive_message (
+            "table.highlight.row",
+            receive_highlight_row)
+            
 
 
         # Get some input so we have a bit of control over the script.       
