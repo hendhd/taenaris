@@ -1,5 +1,5 @@
-#! /usr/bin/ python
-# -*- coding=utf-8 -*- 
+#!/usr/bin/env python3
+# -*- coding=utf-8 -*-  
 
 # A demo program for PyVO
 # 1. 

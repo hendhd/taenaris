@@ -1,4 +1,4 @@
-#! /usr/bin/ python
+#!/usr/bin/env python3
 # -*- coding=utf-8 -*- 
 
 # Make sure topcat is running and connected to a SAMP hub before running
