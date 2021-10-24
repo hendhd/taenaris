@@ -1,0 +1,245 @@
+<?xml version='1.0'?>
+<VOTABLE version="1.4"
+ xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
+<!--
+ !  VOTable written by STIL version 4.0-2 (uk.ac.starlink.votable.VOTableWriter)
+ !  at 2021-10-23T22:00:10
+ !-->
+<RESOURCE>
+<TABLE name="result_S1635026076257" nrows="23">
+<PARAM arraysize="2" datatype="char" name="QUERY_STATUS" value="OK"/>
+<PARAM arraysize="3" datatype="char" name="PROVIDER" value="CDS">
+<DESCRIPTION>TAPVizieR</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="251" datatype="char" name="QUERY" value="SELECT    SDSS12, mine.*, sdss.gmag, sdss.imag, sdss.rmag, sdss.umag    FROM &quot;V/147/sdss12&quot; AS sdss    JOIN TAP_UPLOAD.t1 AS mine    ON 1=CONTAINS(POINT('ICRS', sdss.RA_ICRS, sdss.DE_ICRS),                  CIRCLE('ICRS', mine.ra, mine.dec, 1./3600.))"/>
+<FIELD arraysize="*" datatype="char" name="SDSS12" ucd="meta.id">
+<DESCRIPTION>SDSS-DR12 name, based on J2000 position</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="ra" ucd="pos.eq.ra;meta.main" unit="deg"/>
+<FIELD datatype="double" name="dec" ucd="pos.eq.dec;meta.main" unit="deg"/>
+<FIELD datatype="float" name="gmag" ucd="phot.mag;em.opt.B" unit="mag">
+<DESCRIPTION>[5/40]? Model magnitude in g filter, AB scale (g) (5)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="imag" ucd="phot.mag;em.opt.I" unit="mag">
+<DESCRIPTION>[3/40]? Model magnitude in i filter, AB scale (i) (5)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="rmag" ucd="phot.mag;em.opt.R" unit="mag">
+<DESCRIPTION>[4/39]? Model magnitude in r filter, AB scale (r) (5)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="umag" ucd="phot.mag;em.opt.U" unit="mag">
+<DESCRIPTION>[4/38]? Model magnitude in u filter, AB scale (u) (5)</DESCRIPTION>
+</FIELD>
+<DATA>
+<TABLEDATA>
+  <TR>
+    <TD>J160229.21+480600.4</TD>
+    <TD>240.621726</TD>
+    <TD>48.100121</TD>
+    <TD>21.995</TD>
+    <TD>21.498</TD>
+    <TD>21.649</TD>
+    <TD>23.649</TD>
+  </TR>
+  <TR>
+    <TD>J160113.20+481842.7</TD>
+    <TD>240.305004</TD>
+    <TD>48.311864</TD>
+    <TD>21.668</TD>
+    <TD>20.339</TD>
+    <TD>20.904</TD>
+    <TD>23.541</TD>
+  </TR>
+  <TR>
+    <TD>J160028.01+471543.8</TD>
+    <TD>240.11674</TD>
+    <TD>47.262167</TD>
+    <TD>21.364</TD>
+    <TD>18.432</TD>
+    <TD>19.949</TD>
+    <TD>24.129</TD>
+  </TR>
+  <TR>
+    <TD>J155938.45+482911.1</TD>
+    <TD>239.910232</TD>
+    <TD>48.486443</TD>
+    <TD>20.75</TD>
+    <TD>19.094</TD>
+    <TD>19.728</TD>
+    <TD>21.183</TD>
+  </TR>
+  <TR>
+    <TD>J155856.34+465948.0</TD>
+    <TD>239.734766</TD>
+    <TD>46.996671</TD>
+    <TD>23.886</TD>
+    <TD>20.808</TD>
+    <TD>21.671</TD>
+    <TD>23.777</TD>
+  </TR>
+  <TR>
+    <TD>J155847.45+481825.1</TD>
+    <TD>239.69772</TD>
+    <TD>48.30699</TD>
+    <TD>23.723</TD>
+    <TD>21.332</TD>
+    <TD>22.851</TD>
+    <TD>26.082</TD>
+  </TR>
+  <TR>
+    <TD>J155831.61+470843.1</TD>
+    <TD>239.631715</TD>
+    <TD>47.145315</TD>
+    <TD>23.056</TD>
+    <TD>22.915</TD>
+    <TD>23.393</TD>
+    <TD>23.521</TD>
+  </TR>
+  <TR>
+    <TD>J155820.39+471025.6</TD>
+    <TD>239.584964</TD>
+    <TD>47.173791</TD>
+    <TD>22.524</TD>
+    <TD>19.378</TD>
+    <TD>20.311</TD>
+    <TD>22.977</TD>
+  </TR>
+  <TR>
+    <TD>J155816.51+475244.7</TD>
+    <TD>239.568821</TD>
+    <TD>47.879089</TD>
+    <TD>24.845</TD>
+    <TD>24.107</TD>
+    <TD>24.101</TD>
+    <TD>24.7</TD>
+  </TR>
+  <TR>
+    <TD>J155716.18+455055.3</TD>
+    <TD>239.317433</TD>
+    <TD>45.848697</TD>
+    <TD>23.715</TD>
+    <TD>21.827</TD>
+    <TD>22.84</TD>
+    <TD>25.395</TD>
+  </TR>
+  <TR>
+    <TD>J155543.26+475202.1</TD>
+    <TD>238.930253</TD>
+    <TD>47.867267</TD>
+    <TD>13.244</TD>
+    <TD>11.852</TD>
+    <TD>12.298</TD>
+    <TD>15.253</TD>
+  </TR>
+  <TR>
+    <TD>J155518.80+472957.8</TD>
+    <TD>238.828349</TD>
+    <TD>47.499416</TD>
+    <TD>21.004</TD>
+    <TD>20.375</TD>
+    <TD>20.673</TD>
+    <TD>21.292</TD>
+  </TR>
+  <TR>
+    <TD>J155439.75+455124.1</TD>
+    <TD>238.665627</TD>
+    <TD>45.856715</TD>
+    <TD>24.098</TD>
+    <TD>22.036</TD>
+    <TD>22.77</TD>
+    <TD>23.805</TD>
+  </TR>
+  <TR>
+    <TD>J155439.74+455124.0</TD>
+    <TD>238.665627</TD>
+    <TD>45.856715</TD>
+    <TD>23.673</TD>
+    <TD>21.047</TD>
+    <TD>22.336</TD>
+    <TD>23.627</TD>
+  </TR>
+  <TR>
+    <TD>J155428.88+455330.2</TD>
+    <TD>238.620346</TD>
+    <TD>45.891742</TD>
+    <TD>21.571</TD>
+    <TD>19.077</TD>
+    <TD>19.995</TD>
+    <TD>26.424</TD>
+  </TR>
+  <TR>
+    <TD>J155428.86+455330.4</TD>
+    <TD>238.620346</TD>
+    <TD>45.891742</TD>
+    <TD>21.808</TD>
+    <TD>19.323</TD>
+    <TD>20.227</TD>
+    <TD>24.786</TD>
+  </TR>
+  <TR>
+    <TD>J155321.02+475817.0</TD>
+    <TD>238.337624</TD>
+    <TD>47.971404</TD>
+    <TD>20.997</TD>
+    <TD>18.895</TD>
+    <TD>19.381</TD>
+    <TD>22.286</TD>
+  </TR>
+  <TR>
+    <TD>J155234.52+462011.8</TD>
+    <TD>238.143851</TD>
+    <TD>46.336633</TD>
+    <TD>24.373</TD>
+    <TD>22.084</TD>
+    <TD>23.512</TD>
+    <TD>24.6</TD>
+  </TR>
+  <TR>
+    <TD>J155224.40+474125.0</TD>
+    <TD>238.101688</TD>
+    <TD>47.690289</TD>
+    <TD>22.539</TD>
+    <TD>19.209</TD>
+    <TD>20.633</TD>
+    <TD>25.946</TD>
+  </TR>
+  <TR>
+    <TD>J155224.41+474124.9</TD>
+    <TD>238.101688</TD>
+    <TD>47.690289</TD>
+    <TD>22.391</TD>
+    <TD>19.25</TD>
+    <TD>20.633</TD>
+    <TD>26.443</TD>
+  </TR>
+  <TR>
+    <TD>J155212.82+471058.7</TD>
+    <TD>238.053449</TD>
+    <TD>47.182997</TD>
+    <TD>22.586</TD>
+    <TD>22.188</TD>
+    <TD>22.067</TD>
+    <TD>22.383</TD>
+  </TR>
+  <TR>
+    <TD>J155211.37+465927.6</TD>
+    <TD>238.047391</TD>
+    <TD>46.99102</TD>
+    <TD>21.785</TD>
+    <TD>19.203</TD>
+    <TD>20.244</TD>
+    <TD>22.141</TD>
+  </TR>
+  <TR>
+    <TD>J155211.35+465927.7</TD>
+    <TD>238.047391</TD>
+    <TD>46.99102</TD>
+    <TD>21.997</TD>
+    <TD>19.139</TD>
+    <TD>20.223</TD>
+    <TD>25.828</TD>
+  </TR>
+</TABLEDATA>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>
