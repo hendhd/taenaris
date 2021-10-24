@@ -6,7 +6,9 @@
 # Make sure you have Topcat and Aladin installed and open before starting the
 # script. 
 
-
+import os
+import sys
+import warnings
 
 import pyvo
 import astron_cutout as astron
@@ -92,6 +94,8 @@ def main():
         conn.reply(msg_id, 
                    {"samp.status": "samp.ok", 
                     "samp.result": {} })
+        print("receive_call_table")
+        print(params)
         magic_table(params)
         return "OK"
 
@@ -101,6 +105,8 @@ def main():
         conn.reply(msg_id, 
                    {"samp.status": "samp.ok", 
                     "samp.result": {} })
+        print("receive_call_coord")
+        print(params)
         magic_coords(params)
         return "OK"
 
